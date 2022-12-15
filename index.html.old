@@ -14,13 +14,13 @@
 
 <body class="home">
     <header>
-        <div class="logocontainer">  
-            <img class="logo"  src="/images/logo.gif" alt="Logo. Image of a C surrounded by molecules">
+        <div class="logocontainerindex">  
+            <img class="logoindex"  src="/images/logo.gif" alt="Logo. Image of a C surrounded by molecules">
             <h1>ommunity Science Museum</h1>
         </div>
         <nav>
             <ul>
-                <li class="cta">Home</li>
+                <li class="cta hidden">Home</li>
                 <li class="cta">Exhibitions</li>
                 <li class="cta">Visit</li>
                 <li class="cta">Contact</li>
