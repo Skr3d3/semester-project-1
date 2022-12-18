@@ -77,16 +77,8 @@ footer {
     border-radius: 0 0 20px 20px;
     z-index: -1;
 }
-.navindex {
-    margin-top: -175px;
-}
-.hidden {
-    opacity: 0%;
-}
 .logoindex {
-    max-width: 350px;
-    transform: rotate(-20deg);
-    margin: -20px 0 0 -100px;
+    transition: transform 0.2s ease
 }
 .logocontainerindex {
     display:flex;
@@ -155,7 +147,6 @@ nav a:nth-child(2)  {
 }
 :is(.ctaround,.link):is(:hover,:active) {
     transform: scale(1.2) rotate(-1deg);
-    transform: 
 }
 
 /* GENERAL */
@@ -259,6 +250,33 @@ nav a:nth-child(2)  {
     .cta {
     min-width: 100px;
     }
+    .logoindex {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .logocontainerindex {
+        display:flex;
+        flex-direction: row;
+        margin: auto;
+    }
+    .logocontainerindex h1 {
+        margin: 25px 0 0px -30px;
+    }
 
 }
-@keyframes 
+
+
+@media screen and (min-width: 1087px) {
+
+    .logoindex {
+        max-width: 350px;
+        transform: rotate(-20deg);
+        margin: -20px 0 0 -100px;
+    }
+    .navindex {
+        margin-top: -175px;
+    }
+    .hidden {
+    opacity: 0%;
+    }
+}
