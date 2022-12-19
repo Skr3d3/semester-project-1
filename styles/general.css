@@ -19,8 +19,8 @@ body {
     margin: 0;
 }
 main {
-    margin-top: 280px; /* min250px */
-    margin-bottom: 70px;
+    margin-top: 300px; /* min250px */
+    margin-bottom: 200px;
 }
 
 /* HEADER & FOOTER */
@@ -33,11 +33,14 @@ footer, header, .navigationbar {
     height: 180px;
     width: 100%;
     max-width: 1500px;
+    animation-name: "show-page";
+    animation: "show-page" 0.3s forwards;
 }
 header {
     display: flex;
     flex-direction: column;
     z-index: 2;
+    border-radius: 0 0 20px 20px;
 }
 footer {
     bottom: 0;
@@ -61,6 +64,21 @@ footer {
 }
 
 /* NAVIGATION */
+
+.searchbar {
+    display: inline-flex;
+    flex-direction: row;
+    position: absolute;
+    right: 5px;
+    border-radius: 6px;
+    margin: 5px;
+    z-index: 100;
+    border: 2px solid #150259;
+}
+.searchbarinput {
+    width: 200px;
+    height: 25px;
+}
 
 .navigationbar {
     position: absolute;
@@ -140,18 +158,21 @@ nav a:nth-child(2)  {
     white-space: nowrap;
     transform: scale(1.1);
     border-radius: 6px 6px 50% 50%;
-    padding: 50px 5px;    
+    padding: 40px 5px;    
 }
 .ctaround, .link {
     transition: transform 0.1s ease;
 }
-:is(.ctaround,.link):is(:hover,:active) {
-    transform: scale(1.2) rotate(-1deg);
+:is(.ctaround,.link):hover {
+    transform: scale(1.1) rotate(-1deg);
+}
+:is(.ctaround,.link):active {
+    transform: scale(1.2) rotate(1deg);
 }
 
-/* GENERAL */
+/* BACKGROUNDS */
 
-.index, .aboutpage {
+.index, .about, .exhibitions, .visit, .contact {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -160,11 +181,20 @@ nav a:nth-child(2)  {
 .index {
     background-image: url(/images/index/index.jpg);
 }
-.aboutpage {
+.about {
     background-image: url(/images/about/about.jpg);
 }
+.exhibitions {
+    background-image: url(/images/exhibitions/exhibitions.jpg);
+}
+.visit {
+    background-image: url(/images/visit/visit.jpg);
+}
+.contact {
+    background-image: url(/images/contact/contact.jpg);
+}
 
-/* INDEX */
+/* LAYOUT */
 
 .smallsection {
     display: flex;
@@ -200,33 +230,32 @@ nav a:nth-child(2)  {
     margin: 20vh 0;
 }
 .largesection * {
+    white-space: nowrap;
+    font-size: 50px;
     color: white;
     text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
     text-decoration: none;
 }
-.reversed {
-    flex-direction: row-reverse;
-}
 
-/* ABOUT-PAGE */
-
-.about {
+.singlesection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: #F8FBFF;
+    border: 1px solid #150259;
     min-width: 700px;
     max-width: 1000px;
+    margin: auto;
 }
-.about p {
+.singlesection p {
     max-width: 500px;
     margin: 20px 50px;
 }
-.about :nth-child(3) {
+.singlesection :nth-child(3) {
     margin-bottom: 50px;
 }
-.about :nth-child(4) {
+.singlesection :nth-child(4) {
     margin-bottom: 50px;
 }
 .bannerimage {
@@ -237,18 +266,119 @@ nav a:nth-child(2)  {
     object-position: 0 30%;
 }
 
+/* CARDS */
+
+.cardsection {
+    display: grid;
+    margin: 20px 0;
+}
+.cardsection:not(:first-child) {
+    margin: 50vh 0;
+}
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    height: 480px;
+    border: 1px solid #150259;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: transform 0.2s ease;
+}
+.card:hover {
+    transform: scale(1.1)
+}
+.card img {
+    width: 95%;
+    height: 260px;
+    object-fit: cover;
+}
+.card > * {
+    margin: auto;
+}
+.card > *:not(img) {
+    max-width: 270px;
+    margin: auto;
+}
+
+.squaresection {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+.square {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #F8FBFF;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+    border: 4px solid #F8FBFF;
+    background-color: #4a98fd;
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-size: cover;
+    background-position-x: center;
+    backdrop-filter: blur(8px);
+}
+.square:nth-child(1) {
+    background-image: url(/images/contact/socialmedia.jpg);
+}
+.square:nth-child(2) {
+    background-image: url(/images/contact/address.jpg);
+}
+.square:nth-child(3) {
+    background-image: url(/images/contact/contactform.jpg);
+}
+
+/* VISIT */
+
+.visit main {
+    display: flex;
+    flex-direction: column;
+}
+.singlesection iframe {
+    margin: 10px;
+}
+.card .cta:hover {
+    white-space: nowrap;
+    transform: scale(1.15);
+    border-radius: 50% 50% 6px 6px;
+    padding: 30px 5px;    
+}
+
+/* CONTACT */
+
+
+
 /* MISC */
 
 .reversed {
     flex-direction: row-reverse;
 }
+.hidden {
+    display:none;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 700px) {
+    .cardsection {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
 
 
-@media screen and (max-width: 1087px) {
+/* TABLET */
+
+@media screen and (max-width: 1087px) and (min-width: 701px) {
 
 
     .cta {
     min-width: 100px;
+    font-size: 1.5rem;
     }
     .logoindex {
         max-width: 150px;
@@ -262,12 +392,27 @@ nav a:nth-child(2)  {
     .logocontainerindex h1 {
         margin: 25px 0 0px -30px;
     }
+    .cardsection {
+        grid-template-columns: repeat(2,1fr);
+        gap: 50px;
+    }
 
 }
 
+/*DEKSTOP ONLY*/
 
 @media screen and (min-width: 1087px) {
 
+    .cardsection {
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+        height: 500px;
+        border: 1px solid #150259;
+        background-color: #F8FBFF;
+        gap: 20px;
+    }
     .logoindex {
         max-width: 350px;
         transform: rotate(-20deg);
@@ -276,7 +421,18 @@ nav a:nth-child(2)  {
     .navindex {
         margin-top: -175px;
     }
-    .hidden {
+    .hiddendesktop {
     opacity: 0%;
     }
+}
+
+@keyframes show-page {
+    0% {opacity: 0%}
+    50% {opacity: 50%}
+    100% {opacity: 100%}
+}
+@keyframes bump {
+    0% {transform:scale(1.0)}
+    50% {transform:scale(1.03)}
+    100% {transform:scale(1.0)}
 }
