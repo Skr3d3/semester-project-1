@@ -19,7 +19,7 @@ body {
     margin: 0;
 }
 main {
-    margin-top: 300px; /* min250px */
+    margin-top: 320px; /* min250px */
     margin-bottom: 200px;
 }
 
@@ -85,7 +85,7 @@ footer {
     display: inline-flex;
     justify-content: center;
     align-items: end;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: bolder;
     top: 230px;
     right: 50%;
@@ -104,7 +104,7 @@ footer {
     justify-content: center;
 }
 .logocontainerindex h1 {
-    margin: 50px 0 25px -80px;
+    margin: 50px 0 25px -125px;
     color: #150259;
 }
 .logo {
@@ -227,7 +227,6 @@ nav a:nth-child(2)  {
     justify-content: center;
     width: 100%;
     height: 40vh;
-    margin: 20vh 0;
 }
 .largesection * {
     white-space: nowrap;
@@ -244,6 +243,7 @@ nav a:nth-child(2)  {
     justify-content: space-between;
     background-color: #F8FBFF;
     border: 1px solid #150259;
+    border-radius: 6px;
     min-width: 700px;
     max-width: 1000px;
     margin: auto;
@@ -284,6 +284,8 @@ nav a:nth-child(2)  {
     border: 1px solid #150259;
     border-radius: 6px;
     background-color: #ffffff;
+    text-decoration: none;
+    color: black;
     transition: transform 0.2s ease;
 }
 .card:hover {
@@ -307,29 +309,50 @@ nav a:nth-child(2)  {
     flex-direction: row;
     gap: 60px;
 }
-.square {
-    text-align: center;
-    font-size: 1.7rem;
-    color: #F8FBFF;
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+.square, .socialmedia, .address, .contactform {
     border: 4px solid #F8FBFF;
-    background-color: #4a98fd;
     width: 300px;
     height: 300px;
     border-radius: 6px;
     text-decoration: none;
     background-size: cover;
     background-position-x: center;
-    backdrop-filter: blur(8px);
 }
-.square:nth-child(1) {
-    background-image: url(/images/contact/socialmedia.jpg);
+.square:nth-child(1), .socialmedia {
+    background-image: linear-gradient(#00000060, #00000060), url(/images/contact/socialmedia.jpg);
 }
-.square:nth-child(2) {
-    background-image: url(/images/contact/address.jpg);
+.square:nth-child(2), .address {
+    background-image: linear-gradient(#00000060, #00000060), url(/images/contact/address.jpg);
 }
-.square:nth-child(3) {
-    background-image: url(/images/contact/contactform.jpg);
+.square:nth-child(3), .contactform {
+    background-image: linear-gradient(#00000099, #00000099), url(/images/contact/contactform.jpg);
+}
+.square, :is(.address, .socialmedia, .contactform) :is(a,h3) {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #F8FBFF;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+    text-decoration: none;
+}
+
+.backbutton {
+    font-size: 1.1;
+    padding: 30px;
+}
+
+.smallsquare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #150259;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+.address .smallsquare:hover {
+    transform: scale(2);
+    font-size: 1.5rem;
 }
 
 /* VISIT */
@@ -350,7 +373,47 @@ nav a:nth-child(2)  {
 
 /* CONTACT */
 
-
+.address, .socialmedia, .contactform {
+    height: 500px;
+}
+:is(.socialmedia, .address, .contactform) .backbutton {
+    top: 280px;
+    position: absolute;
+    margin: 20px 0 0 -600px;
+    font-size: 1.1;
+}
+.socialmedia a:not(:first-child) {
+    margin: 5px;
+}
+.contactform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#contactform {
+    text-align: center;
+}
+#contactform label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #F8FBFF;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+}
+.contactform .cta {
+    max-height: 70px;
+}
+.contactform .cta:hover {
+    white-space: nowrap;
+    transform: scale(1.15);
+    border-radius: 50% 50% 6px 6px;
+    padding: 30px 5px;    
+}
+.textarea {
+    display: inline-flex;
+    align-items: start;
+    margin-bottom: 100px;
+}
 
 /* MISC */
 
@@ -375,8 +438,10 @@ nav a:nth-child(2)  {
 
 @media screen and (max-width: 1087px) and (min-width: 701px) {
 
-
-    .cta {
+    h1 {
+        font-size: 2.3rem;
+    }
+    nav .cta {
     min-width: 100px;
     font-size: 1.5rem;
     }
@@ -390,7 +455,7 @@ nav a:nth-child(2)  {
         margin: auto;
     }
     .logocontainerindex h1 {
-        margin: 25px 0 0px -30px;
+        margin: 35px 0 0px -30px;
     }
     .cardsection {
         grid-template-columns: repeat(2,1fr);
@@ -417,6 +482,9 @@ nav a:nth-child(2)  {
         max-width: 350px;
         transform: rotate(-20deg);
         margin: -20px 0 0 -100px;
+    }
+    .logocontainer h1 {
+        margin: 25px 0 0px -77px;
     }
     .navindex {
         margin-top: -175px;
