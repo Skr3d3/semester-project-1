@@ -2,12 +2,11 @@ html {
     font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    height:100%;
 }
 h1, h2, h3, .cta, .navigationbar {
     font-family: "Orbitron", sans-serif;
     letter-spacing: 2.5px;
-}
-h1, h2 {
 }
 h1 {
     font-size: 60px;
@@ -21,12 +20,13 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100%;
     margin: 0;
 }
 main {
     margin-top: 320px; /* min250px */
     margin-bottom: 200px;
+
 }
 
 /* HEADER & FOOTER */
@@ -35,7 +35,7 @@ footer, header, .navigationbar {
     border: 1px solid #150259;
     margin: auto;
     background-color: #F8FBFF;
-    position:absolute;
+    position: absolute;
     height: 180px;
     width: 100%;
     max-width: 1500px;
@@ -49,11 +49,12 @@ header {
     border-radius: 0 0 20px 20px;
 }
 footer {
-    bottom: 0;
+    position: relative;
     display: flex;
     justify-content: space-between;
     height: 100px;
     border-radius: 20px 20px 0 0;
+    bottom: 0;
 }
 .footertext {
     margin: 10px 50px 5px 150px;
@@ -113,7 +114,7 @@ footer {
 .logocontainerindex h1 {
     margin: 50px 0 25px -125px;
 }
-.logo {
+.logo, .inputlogomobile {
     max-width: 150px;
     max-height: 150px;
 }
@@ -160,7 +161,7 @@ nav a:nth-child(2)  {
     transition-property: "transform";
     transition-duration: 0.3s;
 }
-.cta:is(:hover,:active) {
+.cta:is(:hover,:active), .active {
     white-space: nowrap;
     transform: scale(1.1);
     border-radius: 6px 6px 50% 50%;
@@ -181,8 +182,8 @@ nav a:nth-child(2)  {
 .index, .about, .exhibitions, .visit, .contact {
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    backdrop-filter:blur(8px);
+    background-repeat: no-repeat;/*
+    backdrop-filter: blur(8px);*/
 }
 .index {
     background-image: url(/images/index/index.jpg);
@@ -208,17 +209,20 @@ nav a:nth-child(2)  {
     align-items: center;
     justify-content: center;
     width: 100vw;
+    min-width: 100%;
     height: 500px;
     border: 1px solid #150259;
     margin: 50vh 0;
     background-color: #F8FBFF;
 }
 .smallsection div {
-    width: 650px;
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
     min-width: 400px;
 }
 .smallsection div > * {
-    margin: 50px;
+    margin: 50px
 }
 .smallsection img {
     height: 400px;
@@ -233,6 +237,7 @@ nav a:nth-child(2)  {
     justify-content: center;
     width: 100%;
     height: 40vh;
+    margin: auto;
 }
 .largesection * {
     white-space: nowrap;
@@ -241,7 +246,6 @@ nav a:nth-child(2)  {
     text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
     text-decoration: none;
 }
-
 .singlesection {
     display: flex;
     flex-direction: column;
@@ -256,14 +260,16 @@ nav a:nth-child(2)  {
 }
 .singlesection p {
     max-width: 500px;
-    margin: 20px 50px;
+    margin: 20px;
 }
+/*
 .singlesection :nth-child(3) {
     margin-bottom: 50px;
 }
 .singlesection :nth-child(4) {
     margin-bottom: 50px;
 }
+*/
 .bannerimage {
     width: 97%;
     height: 150px;
@@ -309,13 +315,14 @@ nav a:nth-child(2)  {
     max-width: 270px;
     margin: auto;
 }
-
 .squaresection {
     display: flex;
     flex-direction: row;
     gap: 60px;
 }
 .square, .socialmedia, .address, .contactform {
+    display: flex;
+    justify-content: center;
     border: 4px solid #F8FBFF;
     width: 300px;
     height: 300px;
@@ -351,16 +358,11 @@ nav a:nth-child(2)  {
 .smallsquare {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border: 1px solid #150259;
     border-radius: 6px;
     background-color: #ffffff;
     transition: all 0.3s ease;
-}
-.address .smallsquare:hover {
-    transform: scale(2);
-    font-size: 1.5rem;
 }
 
 /* VISIT */
@@ -393,20 +395,20 @@ nav a:nth-child(2)  {
 .socialmedia a:not(:first-child) {
     margin: 5px;
 }
-.contactform {
+#contactform {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-#contactform {
-    text-align: center;
+    margin: auto;
 }
 #contactform label {
     font-size: 1.3rem;
     font-weight: bold;
     color: #F8FBFF;
     text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+    margin: 20px 0 5px 0;
+}
+#contactform textarea {
+    margin: 0 0 10px 0;
 }
 .contactform .cta {
     max-height: 70px;
@@ -416,11 +418,6 @@ nav a:nth-child(2)  {
     transform: scale(1.15);
     border-radius: 50% 50% 6px 6px;
     padding: 30px 5px;    
-}
-.textarea {
-    display: inline-flex;
-    align-items: start;
-    margin-bottom: 100px;
 }
 
 /* MISC */
@@ -437,12 +434,9 @@ nav a:nth-child(2)  {
 }
 .checkboxhack {
     display:none;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px 0;
 }
-#mobilenav:checked ~ .checkboxhack {
-    display:flex;
+.inputlogomobile {
+    display: none;
 }
 
 
@@ -454,10 +448,14 @@ nav a:nth-child(2)  {
         font-size: 2.3rem;
     }
     nav .cta {
-    min-width: 100px;
-    font-size: 1.5rem;
+        min-width: 100px;
+        font-size: 1.5rem;
     }
-    
+
+    .largesection * {
+        white-space: normal;
+        text-align: center;
+    }
     .navigationbar {
         font-size: 1.3rem;
         margin: -50px -300px 0 0;
@@ -495,24 +493,131 @@ nav a:nth-child(2)  {
         display: grid;
         grid-template-columns: repeat(2, 150px);
     }
+    .smallsection {
+        flex-direction: column;
+        height: 700px;
+    }
+    .smallsection div p {
+        margin: 20px;
+    }
+    .smallsection div :is(h3,a) {
+        margin: auto;
+    }
+    .squaresection {
+        flex-direction: column;
+    }
+    .square, .socialmedia, .address, .contactform {
+        width: 600px;
+        height: 600px;
+    }
+    
 }
 
 /* MOBILE */
 
 @media screen and (max-width: 700px) {
+
+    header {
+        height: 110px;
+    }
+    nav {
+        display: none;
+    }
+    :is(.logocontainerindex, .logocontainer) h1 {
+        font-size: 1.1rem;
+        margin: 50px 0 0 100px;
+    }
+    .navigationbar {
+        font-size: 1.1rem;
+        margin: -120px -165px 0 0;
+        height: 20px;
+        width: 330px;
+        border-radius: 0 0 10px 10px;
+        letter-spacing: 3px;
+    }
+    .mobilewelcome:after {
+        content:"Press our logo to bring up the navigation!"
+    }
+    #mobilenav:checked ~ .checkboxhack {
+        display:flex;
+        opacity: 100%;
+    }
+    #mobilenav:checked ~ :is(.logoindex, .logo) {
+        transform: rotate(90deg);
+    }
+    .inputlogomobile {
+        display: block;
+        position:fixed;
+        z-index: 10;
+        opacity: 0%;
+        top: -15px;
+        left: -15px;
+    }
+    .logoindex, .logo {
+        position: fixed;
+        z-index: 5;
+        top: -15px;
+        left: -15px;
+    }
+    .checkboxhack {
+        position: fixed;
+        flex-direction: column;
+        left: 0;
+        background-color: #F8FBFF;
+        border: 1px solid #150259;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0 0 10px;  
+    }
+    .cta:is(:hover,:active), .active {
+        border-radius: 30% 30% 30% 30%;
+        padding: 25px 5px;
+        text-shadow: 1px 1px 5x , -1px -1px 5px #3FA652, -1px 1px 2px #3FA652, 1px -1px 2px b#3FA652;
+    }
+    .active {
+       color: #19CC81;
+    }
     .cardsection {
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    
-.mobilewelcome:after {
-    content:"Press our logo to bring up the navigation!"
+    .largesection * {
+        text-align: center;
+        font-size: 25px;
+        white-space: normal;
+        text-shadow: 1px 1px 2x black, -1px -1px 2px black, -1px 1px 2px black, 1px -1px 2px black;
+    }
+    .singlesection {
+        min-width: 350px;
+        max-width: 100%;
+    }
+    .singlesection p {
+        max-width: 350px;
+        margin: 20px;
+    }
+    .smallsection img {
+        height: 50%;
+        width: 90%;
+        margin-top: 0;
+    }
+    .square, .socialmedia, .address, .contactform {
+        max-width: 300px;
+    }
+    .square {  
+        max-height: 300px;
+    }
+    .ctaround {
+        width: 75px;
+        height: 75px;
+        
+    }
+    :is(.socialmedia, .address, .contactform) .backbutton {
+        margin: 20px 0 0 -250px;
+    } 
 }
 
-}
 
-
-/*DEKSTOP ONLY*/
+/*DESKTOP ONLY*/
 
 @media screen and (min-width: 1087px) {
 
@@ -539,6 +644,15 @@ nav a:nth-child(2)  {
     }
     .hiddendesktop {
     opacity: 0%;
+    }
+    
+    .smallsection img {
+        margin: 50px 10%;
+    }
+    
+    .address .smallsquare:hover {
+        transform: scale(2);
+        font-size: 1.5rem;
     }
 }
 

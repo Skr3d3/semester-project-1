@@ -14,11 +14,20 @@
 </head>
 
 <body class="contact">
-    <header>
 
+    <header>
         <div class="logocontainer">  
+            <input class="hidden" type="checkbox" id="mobilenav">
+            <label class="mobilemenu" for="mobilenav"><img class="inputlogomobile" src="/images/logo.gif" alt="Logo. Image of a C surrounded by molecules"></label>
             <img class="logo"  src="/images/logo.gif" alt="Logo. Image of a C surrounded by molecules">
             <h1><span class="hiddendesktop">C</span>ommunity Science Museum</h1>
+            <nav class="checkboxhack" aria-label="Hamburger menu for mobile devices">
+                <a class="cta" href="/index.html">Home</a>
+                <a class="cta" href="/exhibitions.html">Exhibitions</a>
+                <a class="cta" href="/visit.html">Visit</a>
+                <a class="cta active" href="/contact.html">Contact</a>
+                <a class="cta" href="/about.html">About Us</a>
+            </nav>
         </div>
         <h2 class="navigationbar"><a class="link inactive" href="contact.html">Contact</a>&nbsp;&nbsp;-&nbsp;&nbsp;<span>Contact Form</span></h2>
 
@@ -35,26 +44,20 @@
             <label for="search" class="hidden">Searchbar</label> 
             <button for="search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-
     </header>
 
     <main>
         <section class="singlesection contactform">
             <label class="link backbutton" for="back"><i class="fa-solid fa-arrow-left"></i>Back</label><input type="button" id="back" class="hidden" value="Back" onclick="history.back()">
             <h3>Contact Form</h3>
-            <div class="">
+            <div>
                 <form id="contactform" action="/contact.html" method="get">
-                    
                     <label for="name">Full Name</label> 
-                    <input type="textbox" class="searchbarinput" name="name" id="name" placeholder="Full name...">
-
+                    <input type="text" class="searchbarinput" name="name" id="name" placeholder="Full name...">
                     <label for="email">Email</label> 
                     <input type="email" class="searchbarinput" name="email" id="email" placeholder="Email..">
-
-                    <div class="textarea">
                     <label for="message">Message</label> 
                     <textarea id="message" name="message" cols="40" rows="5"></textarea>
-                    </div>
                 </form>
                 <input type="submit" form="contactform" value="Send" class="cta">
             </div>
