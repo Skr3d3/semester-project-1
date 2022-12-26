@@ -1,10 +1,9 @@
 html {
     font-family: "Roboto", sans-serif;
-    scroll-behavior: smooth;
     overflow-x: hidden;
     height:100%;
 }
-h1, h2, h3, .cta, .navigationbar {
+h1, h2, h3, h4, .cta, .navigationbar {
     font-family: "Orbitron", sans-serif;
     letter-spacing: 2.5px;
 }
@@ -22,6 +21,8 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 main {
     margin-top: 320px; /* min250px */
@@ -33,7 +34,6 @@ main {
 
 footer, header, .navigationbar {
     border: 1px solid #150259;
-    margin: auto;
     background-color: #F8FBFF;
     position: absolute;
     height: 180px;
@@ -241,6 +241,7 @@ nav a:nth-child(2)  {
 }
 .largesection * {
     white-space: nowrap;
+    text-align: center;
     font-size: 50px;
     color: white;
     text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
@@ -262,14 +263,6 @@ nav a:nth-child(2)  {
     max-width: 500px;
     margin: 20px;
 }
-/*
-.singlesection :nth-child(3) {
-    margin-bottom: 50px;
-}
-.singlesection :nth-child(4) {
-    margin-bottom: 50px;
-}
-*/
 .bannerimage {
     width: 97%;
     height: 150px;
@@ -280,12 +273,20 @@ nav a:nth-child(2)  {
 
 /* CARDS */
 
-.cardsection {
+.cardsection div {
     display: grid;
     margin: 20px 0;
 }
 .cardsection:not(:first-child) {
     margin: 50vh 0;
+}
+.cardsection h4 {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #150259;
+    border-radius: 6px;
+    background-color: #ffffff;
+
 }
 .card {
     flex: 1;
@@ -299,6 +300,7 @@ nav a:nth-child(2)  {
     text-decoration: none;
     color: black;
     transition: transform 0.2s ease;
+    margin:auto;
 }
 .card:hover {
     transform: scale(1.1)
@@ -314,6 +316,12 @@ nav a:nth-child(2)  {
 .card > *:not(img) {
     max-width: 270px;
     margin: auto;
+}
+.card .link {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    
 }
 .squaresection {
     display: flex;
@@ -438,6 +446,15 @@ nav a:nth-child(2)  {
 .inputlogomobile {
     display: none;
 }
+.flyinglogo {
+    display: none;
+    position: fixed;
+    width: 150px;
+    top: -15px;
+    left: -15px;
+    z-index: 5;
+    transition: transform 0.3 ease;
+}
 
 
 /* TABLET */
@@ -454,7 +471,6 @@ nav a:nth-child(2)  {
 
     .largesection * {
         white-space: normal;
-        text-align: center;
     }
     .navigationbar {
         font-size: 1.3rem;
@@ -478,7 +494,7 @@ nav a:nth-child(2)  {
         margin: 35px 0 0px -30px;
         letter-spacing: normal;
     }
-    .cardsection {
+    .cardsection div {
         grid-template-columns: repeat(2,1fr);
         gap: 50px;
     }
@@ -524,7 +540,7 @@ nav a:nth-child(2)  {
         display: none;
     }
     :is(.logocontainerindex, .logocontainer) h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin: 50px 0 0 100px;
     }
     .navigationbar {
@@ -544,6 +560,12 @@ nav a:nth-child(2)  {
     }
     #mobilenav:checked ~ :is(.logoindex, .logo) {
         transform: rotate(90deg);
+    }
+    #flyinglogo:active ~ .flyinglogo {
+        display: block;
+        transform: scale(2);
+        top: 0px;
+        left: 0px;
     }
     .inputlogomobile {
         display: block;
@@ -577,15 +599,18 @@ nav a:nth-child(2)  {
     .active {
        color: #19CC81;
     }
-    .cardsection {
+    .cardsection div {
         grid-template-columns: 1fr;
         gap: 50px;
     }
     .largesection * {
-        text-align: center;
         font-size: 25px;
         white-space: normal;
+        margin-bottom: 80px;
         text-shadow: 1px 1px 2x black, -1px -1px 2px black, -1px 1px 2px black, 1px -1px 2px black;
+    }
+    .largesection div h3 {
+        margin: 10px;
     }
     .singlesection {
         min-width: 350px;
@@ -621,7 +646,7 @@ nav a:nth-child(2)  {
 
 @media screen and (min-width: 1087px) {
 
-    .cardsection {
+    .cardsection div {
         display:flex;
         align-items: center;
         justify-content: space-around;
@@ -653,6 +678,10 @@ nav a:nth-child(2)  {
     .address .smallsquare:hover {
         transform: scale(2);
         font-size: 1.5rem;
+    }
+    iframe {
+        width:600; 
+        height:350;
     }
 }
 
