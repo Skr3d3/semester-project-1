@@ -3,7 +3,7 @@ html {
     overflow-x: hidden;
     height:100%;
 }
-h1, h2, h3, h4, .cta, .navigationbar {
+h1, h2, h3, h4, h5, .cta, .navigationbar {
     font-family: "Orbitron", sans-serif;
     letter-spacing: 2.5px;
 }
@@ -227,7 +227,7 @@ nav a:nth-child(2)  {
     min-width: 400px;
 }
 .smallsection div > * {
-    margin: 50px
+    margin: 20px
 }
 .smallsection img {
     height: 400px;
@@ -520,7 +520,7 @@ nav a:nth-child(2)  {
     }
     .smallsection {
         flex-direction: column;
-        height: 700px;
+        height: 800px;
     }
     .smallsection div p {
         margin: 20px;
