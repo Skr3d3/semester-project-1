@@ -183,6 +183,10 @@ nav a:nth-child(2)  {
 .active {
     text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 5px #3FA652, 1px -1px 5px #3FA652 ;
 }
+.linkscontainer {
+    margin:  20px;
+}
+
 /* BACKGROUNDS */
 
 .index, .about, .exhibitions, .visit, .contact {
@@ -520,7 +524,7 @@ nav a:nth-child(2)  {
     }
     .smallsection {
         flex-direction: column;
-        height: 800px;
+        height: 850px;
     }
     .smallsection div p {
         margin: 20px;
@@ -639,7 +643,7 @@ nav a:nth-child(2)  {
     .smallsection img {
         height: 50%;
         width: 90%;
-        margin-top: 0;
+        margin: 10px;
     }
     .square, .socialmedia, .address, .contactform {
         max-width: 300px;
