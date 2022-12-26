@@ -27,9 +27,15 @@ body {
 main {
     margin-top: 320px; /* min250px */
     margin-bottom: 200px;
-
 }
-
+.skip {
+    font-size: 0.5rem;
+    font-family: sans-serif;
+    font-weight: 100;
+    padding: 5px;
+    z-index: 100;
+    margin: 0 0 -1px 0;
+}
 /* HEADER & FOOTER */
 
 footer, header, .navigationbar {
@@ -96,7 +102,7 @@ footer {
     top: 230px;
     right: 50%;
     margin: -50px -450px 0 0;
-    height: 70px;
+    height: 80px;
     width: 900px;
     white-space: nowrap;
     border-radius: 0 0 20px 20px;
@@ -138,7 +144,6 @@ nav a  {
 nav a:nth-child(2)  {
     z-index: 2;
 }
-
 /* CTA */
 
 .cta {
@@ -158,10 +163,9 @@ nav a:nth-child(2)  {
     border: 1px solid #150259;
     border-radius: 6px;
     white-space: nowrap;
-    transition-property: "transform";
-    transition-duration: 0.3s;
+    transition: all 0.2s ease;
 }
-.cta:is(:hover,:active), .active {
+.cta:is(:hover,:active):not(.active) {
     white-space: nowrap;
     transform: scale(1.1);
     border-radius: 6px 6px 50% 50%;
@@ -176,14 +180,15 @@ nav a:nth-child(2)  {
 :is(.ctaround,.link):active {
     transform: scale(1.2) rotate(1deg);
 }
-
+.active {
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 5px #3FA652, 1px -1px 5px #3FA652 ;
+}
 /* BACKGROUNDS */
 
 .index, .about, .exhibitions, .visit, .contact {
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;/*
-    backdrop-filter: blur(8px);*/
+    background-repeat: no-repeat;
 }
 .index {
     background-image: url(/images/index/index.jpg);
@@ -273,7 +278,7 @@ nav a:nth-child(2)  {
 
 /* CARDS */
 
-.cardsection div {
+.cardsinsection {
     display: grid;
     margin: 20px 0;
 }
@@ -357,7 +362,6 @@ nav a:nth-child(2)  {
 }
 
 .backbutton {
-    font-size: 1.1;
     padding: 30px;
     text-decoration: underline;
     color: #150259;
@@ -392,13 +396,19 @@ nav a:nth-child(2)  {
 /* CONTACT */
 
 .address, .socialmedia, .contactform {
+    padding: 0;
     height: 500px;
 }
 :is(.socialmedia, .address, .contactform) .backbutton {
-    top: 280px;
-    position: absolute;
-    margin: 20px 0 0 -600px;
-    font-size: 1.1;
+    margin-top: -90px;
+    margin-bottom: 90px;
+    align-self: start;
+    top: 5px;
+    left: 5px;
+    position: relative;
+}
+.contactform {
+    height: 700px;
 }
 .socialmedia a:not(:first-child) {
     margin: 5px;
@@ -406,7 +416,6 @@ nav a:nth-child(2)  {
 #contactform {
     display: flex;
     flex-direction: column;
-    margin: auto;
 }
 #contactform label {
     font-size: 1.3rem;
@@ -475,7 +484,7 @@ nav a:nth-child(2)  {
     .navigationbar {
         font-size: 1.3rem;
         margin: -50px -300px 0 0;
-        height: 60px;
+        height: 70px;
         width: 600px;
         letter-spacing: 5px;
         z-index: -1;
@@ -494,7 +503,7 @@ nav a:nth-child(2)  {
         margin: 35px 0 0px -30px;
         letter-spacing: normal;
     }
-    .cardsection div {
+    .cardsinsection {
         grid-template-columns: repeat(2,1fr);
         gap: 50px;
     }
@@ -522,9 +531,9 @@ nav a:nth-child(2)  {
     .squaresection {
         flex-direction: column;
     }
-    .square, .socialmedia, .address, .contactform {
-        width: 600px;
-        height: 600px;
+    .square  {
+        width: 500px;
+        height: 500px;
     }
     
 }
@@ -591,15 +600,22 @@ nav a:nth-child(2)  {
         padding: 10px;
         margin: 5px 0 0 10px;  
     }
+    .skip {
+        display: none;
+    }
     .cta:is(:hover,:active), .active {
         border-radius: 30% 30% 30% 30%;
         padding: 25px 5px;
-        text-shadow: 1px 1px 5x , -1px -1px 5px #3FA652, -1px 1px 2px #3FA652, 1px -1px 2px b#3FA652;
     }
-    .active {
-       color: #19CC81;
+    :is(.socialmedia, .address, .contactform) .backbutton {
+        top: -10px;
+        left: -5px;
+        position: relative;
     }
-    .cardsection div {
+    .socialmedia .backbutton {
+        top: -50px;
+    }
+    .cardsinsection {
         grid-template-columns: 1fr;
         gap: 50px;
     }
@@ -636,9 +652,6 @@ nav a:nth-child(2)  {
         height: 75px;
         
     }
-    :is(.socialmedia, .address, .contactform) .backbutton {
-        margin: 20px 0 0 -250px;
-    } 
 }
 
 
@@ -646,7 +659,7 @@ nav a:nth-child(2)  {
 
 @media screen and (min-width: 1087px) {
 
-    .cardsection div {
+    .cardsinsection {
         display:flex;
         align-items: center;
         justify-content: space-around;
@@ -679,19 +692,10 @@ nav a:nth-child(2)  {
         transform: scale(2);
         font-size: 1.5rem;
     }
-    iframe {
-        width:600; 
-        height:350;
-    }
 }
 
 @keyframes show-page {
     0% {opacity: 0%}
     50% {opacity: 50%}
     100% {opacity: 100%}
-}
-@keyframes bump {
-    0% {transform:scale(1.0)}
-    50% {transform:scale(1.03)}
-    100% {transform:scale(1.0)}
 }
