@@ -274,10 +274,10 @@ nav a:nth-child(2)  {
 }
 .bannerimage {
     width: 97%;
-    height: 150px;
+    height: 180px;
     margin-top: 10px;
     object-fit: cover;
-    object-position: 0 30%;
+    object-position: 0 40%;
 }
 
 /* CARDS */
@@ -301,7 +301,7 @@ nav a:nth-child(2)  {
     flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 320px;
+    width: 320px;
     height: 480px;
     border: 1px solid #150259;
     border-radius: 6px;
