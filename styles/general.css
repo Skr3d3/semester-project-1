@@ -1,3 +1,6 @@
+@import "variables.css";
+
+
 html {
     font-family: "Roboto", sans-serif;
     overflow-x: hidden;
@@ -7,12 +10,15 @@ h1, h2, h3, h4, h5, .cta, .navigationbar {
     font-family: "Orbitron", sans-serif;
     letter-spacing: 2.5px;
 }
-h1 {
-    font-size: 60px;
-    white-space: nowrap;
+h5 {
+    font-size: 1.2rem;
 }
 a {
-    color: #150259;
+    color: var(--dark);
+}
+strong {
+    letter-spacing: 0.6px;
+    text-decoration: underline;
 }
 body {
     display: flex;
@@ -39,8 +45,8 @@ main {
 /* HEADER & FOOTER */
 
 footer, header, .navigationbar {
-    border: 1px solid #150259;
-    background-color: #F8FBFF;
+    border: 1px solid var(--dark);
+    background-color: var(--light);
     position: absolute;
     height: 180px;
     width: 100%;
@@ -86,7 +92,7 @@ footer {
     border-radius: 6px;
     margin: 5px;
     z-index: 100;
-    border: 2px solid #150259;
+    border: 2px solid var(--dark);
 }
 .searchbarinput {
     width: 200px;
@@ -151,7 +157,7 @@ nav a:nth-child(2)  {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+    text-shadow: var(--textborder);
     min-width: 190px;
     max-height: 20px;
     padding: 20px 5px;
@@ -160,7 +166,7 @@ nav a:nth-child(2)  {
     background-repeat: no-repeat;
     color: white;
     font-weight: bolder;
-    border: 1px solid #150259;
+    border: 1px solid var(--dark);
     border-radius: 6px;
     white-space: nowrap;
     transition: all 0.2s ease;
@@ -181,7 +187,7 @@ nav a:nth-child(2)  {
     transform: scale(1.2) rotate(1deg);
 }
 .active {
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 5px #3FA652, 1px -1px 5px #3FA652 ;
+    text-shadow: var(--shadow-downright) 1px var(--black), var(--shadow-upleft) 1px var(--black), var(--shadow-upright) 5px var(--tertiary), var(--shadow-downleft) 5px var(--tertiary) ;
 }
 .linkscontainer {
     margin:  20px;
@@ -220,9 +226,9 @@ nav a:nth-child(2)  {
     width: 100vw;
     min-width: 100%;
     height: 500px;
-    border: 1px solid #150259;
+    border: 1px solid var(--dark);
     margin: 50vh 0;
-    background-color: #F8FBFF;
+    background-color: var(--light);
 }
 .smallsection div {
     display: flex;
@@ -252,8 +258,8 @@ nav a:nth-child(2)  {
     white-space: nowrap;
     text-align: center;
     font-size: 50px;
-    color: white;
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+    color: var(--white);
+    text-shadow: var(--textborder) ;
     text-decoration: none;
 }
 .singlesection {
@@ -261,8 +267,8 @@ nav a:nth-child(2)  {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #F8FBFF;
-    border: 1px solid #150259;
+    background-color: var(--light);
+    border: 1px solid var(--dark);
     border-radius: 6px;
     min-width: 700px;
     max-width: 1000px;
@@ -292,9 +298,9 @@ nav a:nth-child(2)  {
 .cardsection h4 {
     font-size: 20px;
     text-align: center;
-    border: 1px solid #150259;
+    border: 1px solid var(--dark);
     border-radius: 6px;
-    background-color: #ffffff;
+    background-color: var(--white);
 
 }
 .card {
@@ -303,9 +309,9 @@ nav a:nth-child(2)  {
     flex-direction: column;
     width: 320px;
     height: 480px;
-    border: 1px solid #150259;
+    border: 1px solid var(--dark);
     border-radius: 6px;
-    background-color: #ffffff;
+    background-color: var(--white);
     text-decoration: none;
     color: black;
     transition: transform 0.2s ease;
@@ -340,7 +346,7 @@ nav a:nth-child(2)  {
 .square, .socialmedia, .address, .contactform {
     display: flex;
     justify-content: center;
-    border: 4px solid #F8FBFF;
+    border: 4px solid var(--light);
     width: 300px;
     height: 300px;
     border-radius: 6px;
@@ -360,24 +366,24 @@ nav a:nth-child(2)  {
 .square, :is(.address, .socialmedia, .contactform) :is(a,h3,.backbutton) {
     text-align: center;
     font-size: 1.7rem;
-    color: #F8FBFF;
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
+    color: var(--light);
+    text-shadow: var(--textborder) ;
     text-decoration: none;
 }
 
 .backbutton {
     padding: 30px;
     text-decoration: underline;
-    color: #150259;
+    color: var(--dark);
 }
 
 .smallsquare {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #150259;
+    border: 1px solid var(--dark);
     border-radius: 6px;
-    background-color: #ffffff;
+    background-color: var(--white);
     transition: all 0.3s ease;
 }
 
@@ -404,11 +410,9 @@ nav a:nth-child(2)  {
     height: 500px;
 }
 :is(.socialmedia, .address, .contactform) .backbutton {
-    margin-top: -90px;
-    margin-bottom: 90px;
+    margin-top: -80px;
+    margin-bottom: 80px;
     align-self: start;
-    top: 5px;
-    left: 5px;
     position: relative;
 }
 .contactform {
@@ -424,12 +428,12 @@ nav a:nth-child(2)  {
 #contactform label {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #F8FBFF;
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black ;
-    margin: 20px 0 5px 0;
+    color: var(--light);
+    text-shadow: var(--textborder);
+    margin: 20px 5px 5px 5px;
 }
 #contactform textarea {
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
 }
 .contactform .cta {
     max-height: 70px;
@@ -451,7 +455,7 @@ nav a:nth-child(2)  {
 }
 .inactive {
     color: rgb(240, 240, 240);
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;
+    text-shadow: var(--textborder);
 }
 .checkboxhack {
     display:none;
@@ -470,20 +474,19 @@ nav a:nth-child(2)  {
 }
 
 
-/* TABLET */
+/* TABLET (and mobile) */
 
 @media screen and (max-width: 1087px) {
 
+    /*Navigation and header*/
+
     h1 {
         font-size: 2.3rem;
+        text-align: center;
     }
     nav .cta {
         min-width: 100px;
         font-size: 1.5rem;
-    }
-
-    .largesection * {
-        white-space: normal;
     }
     .navigationbar {
         font-size: 1.3rem;
@@ -507,24 +510,15 @@ nav a:nth-child(2)  {
         margin: 35px 0 0px -30px;
         letter-spacing: normal;
     }
-    .cardsinsection {
-        grid-template-columns: repeat(2,1fr);
-        gap: 50px;
-    }
-    .footericons {
-        display: none;
-    }
-    footer {
-        justify-content: center;
-    }  
-    .footertext {
-        margin: 10px 0 5px 0;
-        display: grid;
-        grid-template-columns: repeat(2, 150px);
+    
+    /*Sections and layout*/
+
+    .largesection * {
+        white-space: normal;
     }
     .smallsection {
         flex-direction: column;
-        height: 850px;
+        height: 870px;
     }
     .smallsection div p {
         margin: 20px;
@@ -539,6 +533,24 @@ nav a:nth-child(2)  {
         width: 500px;
         height: 500px;
     }
+    .cardsinsection {
+        grid-template-columns: repeat(2,1fr);
+        gap: 50px;
+    }
+
+    /*Footer*/
+    
+    footer {
+        justify-content: center;
+    }  
+    .footertext {
+        margin: 10px 0 5px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+    }
+    .footericons {
+        display: none;
+    }
     
 }
 
@@ -546,15 +558,17 @@ nav a:nth-child(2)  {
 
 @media screen and (max-width: 700px) {
 
-    header {
+    /*Navigation and header*/
+
+        header {
         height: 110px;
-    }
-    nav {
-        display: none;
     }
     :is(.logocontainerindex, .logocontainer) h1 {
         font-size: 1rem;
         margin: 50px 0 0 100px;
+    }
+    nav {
+        display: none;
     }
     .navigationbar {
         font-size: 1.1rem;
@@ -563,9 +577,6 @@ nav a:nth-child(2)  {
         width: 330px;
         border-radius: 0 0 10px 10px;
         letter-spacing: 3px;
-    }
-    .mobilewelcome:after {
-        content:"Press our logo to bring up the navigation!"
     }
     #mobilenav:checked ~ .checkboxhack {
         display:flex;
@@ -598,27 +609,24 @@ nav a:nth-child(2)  {
         position: fixed;
         flex-direction: column;
         left: 0;
-        background-color: #F8FBFF;
-        border: 1px solid #150259;
+        background-color: var(--light);
+        border: 1px solid var(--dark);
         border-radius: 10px;
         padding: 10px;
         margin: 5px 0 0 10px;  
     }
-    .skip {
-        display: none;
-    }
-    .cta:is(:hover,:active), .active {
+    nav .cta:is(:hover,:active):not(.active) {
         border-radius: 30% 30% 30% 30%;
         padding: 25px 5px;
     }
-    :is(.socialmedia, .address, .contactform) .backbutton {
-        top: -10px;
-        left: -5px;
-        position: relative;
+    .ctaround {
+        width: 75px;
+        height: 75px;
+        
     }
-    .socialmedia .backbutton {
-        top: -50px;
-    }
+
+    /*Sections and layout*/
+
     .cardsinsection {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -627,7 +635,7 @@ nav a:nth-child(2)  {
         font-size: 25px;
         white-space: normal;
         margin-bottom: 80px;
-        text-shadow: 1px 1px 2x black, -1px -1px 2px black, -1px 1px 2px black, 1px -1px 2px black;
+        text-shadow: var(--shadow-downright) 2px var(--black), var(--shadow-upleft) 2px var(--black), var(--shadow-upright) 2px var(--black), var(--shadow-downleft) 2px var(--black) ;
     }
     .largesection div h3 {
         margin: 10px;
@@ -651,10 +659,14 @@ nav a:nth-child(2)  {
     .square {  
         max-height: 300px;
     }
-    .ctaround {
-        width: 75px;
-        height: 75px;
-        
+
+    /*Misc*/
+
+    .mobilewelcome:after {
+        content:"Press our logo to bring up the navigation!"
+    }
+    .skip {
+        display: none;
     }
 }
 
@@ -663,15 +675,11 @@ nav a:nth-child(2)  {
 
 @media screen and (min-width: 1087px) {
 
-    .cardsinsection {
-        display:flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 100vw;
-        height: 500px;
-        border: 1px solid #150259;
-        background-color: #F8FBFF;
-        gap: 20px;
+    /*Navigation and header*/
+
+    h1 {
+        font-size: 60px;
+        white-space: nowrap;
     }
     .logoindex {
         max-width: 350px;
@@ -684,17 +692,31 @@ nav a:nth-child(2)  {
     .navindex {
         margin-top: -175px;
     }
-    .hiddendesktop {
-    opacity: 0%;
+
+    /*Layout*/
+
+    .cardsinsection {
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+        height: 500px;
+        border: 1px solid var(--dark);
+        background-color: var(--light);
+        gap: 20px;
     }
-    
     .smallsection img {
         margin: 50px 10%;
     }
-    
     .address .smallsquare:hover {
         transform: scale(2);
         font-size: 1.5rem;
+    }
+    
+    /*Misc*/
+
+    .hiddendesktop {
+    opacity: 0%;
     }
 }
 

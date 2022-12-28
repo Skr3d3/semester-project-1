@@ -1,0 +1,20 @@
+:root {
+
+    /*colors*/
+
+    --white: #FFFFFF;
+    --black: #000000;
+    --light: #F8FBFF;
+    --dark: #150259;
+    --tertiary: #3FA652;
+
+    /*text-shadow*/
+
+    --shadow-downright: 1px 1px;
+    --shadow-downleft: 1px -1px;
+    --shadow-upright: -1px 1px;
+    --shadow-upleft: -1px -1px;
+
+    --textborder: 1px 1px 1px var(--black), -1px -1px 1px var(--black), -1px 1px 1px var(--black), 1px -1px 1px var(--black);
+    
+}
