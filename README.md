@@ -54,6 +54,10 @@ Use a program to create a local testing environment.
 My suggestions are either the Live Server plugin for Visual Studio Code,
 or a more advanced program like XXAMP for either [Windows](https://www.apachefriends.org/faq_windows.html) or [Linux](https://www.apachefriends.org/faq_linux.html)
 
+## License
+
+This is available under the MIT license. See the LICENSE file for more info.
+
 
 ## Contributing
 
