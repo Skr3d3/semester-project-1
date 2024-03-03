@@ -30,7 +30,6 @@ The site contains of these pages:
 
 Just copy the repository using GitHub desktop. 
 
-
 #### Method 2
 
 1. Clone the repo:
@@ -49,7 +48,6 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ```
 
-
 ### Run
 
 Use a program to create a local testing environment.
@@ -65,6 +63,4 @@ If you want to contribute please make contribution in separate branch and make a
 
 [My X page](https://twitter.com/Skr3d3)
 
-[My LinkedIn page](
-    
-)
+[My LinkedIn page](https://www.linkedin.com/in/patrick-skrede-476380235/)
