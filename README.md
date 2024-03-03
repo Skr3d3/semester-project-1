@@ -24,29 +24,38 @@ The site contains of these pages:
 
 ## Setup Guide
 
-### Method 1 (recommended)
+### Installing
 
-#### Installing
+#### Method 1 (recommended)
 
 Just copy the repository using GitHub desktop. 
 
-#### Run
 
-Run the site locally using the Live Server plugin with Visual Studio Code or equivalent software.
-
-### Method 2
-
-#### Installing
+#### Method 2
 
 1. Clone the repo:
-
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone https://github.com/Skr3d3/semester-project-1.git
 ```
 
-#### Run
+2. Press Enter to create your local clone.
+```bash
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `Spoon-Knife`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
 
-2. Run site locally through localhost
+```
+
+
+### Run
+
+Use a program to create a local testing environment.
+My suggestions are either the Live Server plugin for Visual Studio Code,
+or a more advanced program like XXAMP for either [Windows](https://www.apachefriends.org/faq_windows.html) or [Linux](https://www.apachefriends.org/faq_linux.html)
+
 
 ## Contributing
 
@@ -54,6 +63,8 @@ If you want to contribute please make contribution in separate branch and make a
 
 ## Contact
 
-[My Twitter page](www.twitter.com)
+[My X page](https://twitter.com/Skr3d3)
 
-[My LinkedIn page](www.linkedin.com)
+[My LinkedIn page](
+    
+)
