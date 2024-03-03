@@ -39,7 +39,7 @@ git clone https://github.com/Skr3d3/semester-project-1.git
 
 2. Press Enter to create your local clone.
 ```bash
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/Skr3d3/semester-project-1.git
 > Cloning into `Spoon-Knife`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
